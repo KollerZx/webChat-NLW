@@ -1,18 +1,17 @@
-express
-npm install express
+## WebChat 
 
-npm install @types/express -D
+## 🚀 Tecnologias
+Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
+- Typescript
+- NodeJs
+- Express
+- SQLite
+- WebSocket
 
-typescript
-npm install typescript -D
+## 💻 Projeto 
 
-npm run tsc -- --init
+É uma aplicação de chat de mensagem instântanea utilizando o WebSocket para comunicação. Podendo ser aplicado no seu site para suporte e atendimento ao cliente.
 
+---
 
-npm install ts-node-dev -D
-
-npm install typeorm reflect-metadata sqlite3 --save
-
-**Cria o script para rodar as migrations**
-
-"typeorm": "ts-node-dev node_modules/typeorm/cli.js"
+Desenvolvido durante a NLW5 da Rocketseat- Trilha NodeJs
