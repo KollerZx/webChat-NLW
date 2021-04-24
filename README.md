@@ -6,7 +6,8 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 - NodeJs
 - Express
 - SQLite
-- WebSocket
+- TypeORM
+- Socket.io
 
 ## 💻 Projeto 
 

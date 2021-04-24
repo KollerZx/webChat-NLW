@@ -51,6 +51,10 @@ io.on("connect", (socket) => {
             user_id
         })
 
-        //salvar a conexao com o socket_id, user_id
+        /* Recupera todas as mensagens ja enviadas pelo usuario e emite um evento 
+        passando essas mensagens */
+        const allMessages = await messageService.listByUser(user_id)
+
+        socket.emit("client_list_all_messages", allMessages)
     })
 })
