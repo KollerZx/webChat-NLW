@@ -2,28 +2,28 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-    <title></title>
-    <link rel="stylesheet" href="/css/styles.css" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <title></title>
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body>
-    <div id="list_users"></div>
+  <div id="list_users"></div>
 
-    <script id="template" type="x-tmpl-mustache">
+  <script id="template" type="x-tmpl-mustache">
       <div id="user{{id}}">
           <span class="email">Email: {{email}}</span>
           <button class="btn_atd" onclick="call('{{id}}')">Entrar em atendimento</button>
       </div>
     </script>
 
-    <div id="supports"></div>
+  <div id="supports"></div>
 
-    <script id="admin_template" type="x-tmpl-mustache">
+  <script id="admin_template" type="x-tmpl-mustache">
       <div class="admin" id="admin">
 
           <span class="in_support">Em atendimento - <strong> {{email}}</strong> </span>

@@ -15,4 +15,24 @@ io.on("connect", async (socket) =>{
 
         callback(allMessages)
     })
+
+    /* admin.js */
+    socket.on("admin_send_messages", async params => {
+        const {user_id, text} = params;
+
+        await messagesService.create({
+            text,
+            user_id,
+            admin_id:socket.id
+        })
+
+
+        const {socket_id} = await connectionsService.findByUserId(user_id)
+
+        /* Para emitir a mensagem para o usuario -> chat.js */
+        io.to(socket_id).emit("admin_send_to_client", {
+            text,
+            socket_id:socket.id
+        })
+    })
 })
