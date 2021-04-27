@@ -1,5 +1,7 @@
 const socket = io()
 let connectionsUsers = []
+
+/* client.ts */
 socket.on("admin_list_all_users", connections => {
     connectionsUsers = connections
 
@@ -33,6 +35,11 @@ function call(id) {
     const params = {
         user_id: connection.user_id
     }
+
+    /* admin.ts */
+    socket.emit("admin_user_in_support", params)
+
+    /* admin.ts */
     socket.emit("admin_list_messages_by_user", params, messages => {
         const divMessages = document.getElementById(`allMessages${connection.user_id}`)
 

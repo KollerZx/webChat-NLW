@@ -35,4 +35,22 @@ io.on("connect", async (socket) =>{
             socket_id:socket.id
         })
     })
+
+    /* admin.js */
+    socket.on("admin_user_in_support", async params => {
+
+        /* Atualiza a conexão fornecendo um admin para o atendimento */
+
+        const { user_id } = params
+
+        await connectionsService.updateAdminID(user_id, socket.id)
+
+        /* atualiza a lista de usuarios sem atendimento */
+        const allConnectionsWithoutAdmin = await connectionsService.findAllWithoutAdmin()
+
+        io.emit("admin_list_all_users", allConnectionsWithoutAdmin)
+
+
+
+    })
 })
